@@ -22,6 +22,9 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.js"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script>
 
+<link rel="stylesheet" href="${static.url('themes/gymnasium/css/clippy.css')}">
+<script src="${static.url('themes/gymnasium/js/clippy.js')}"></script>
+
 <script src="${static.url('themes/gymnasium/js/prism.js')}"> </script>
 <script src="${static.url('themes/gymnasium/js/cookiebanner.js')}" id="cookiebanner"
 	data-link="#f89820"
@@ -37,8 +40,17 @@
 	//what we want it to look like until we move to Cypress
 	//TODO: Unhackify this.
 
+  clippy.load('Clippy', function(agent){
+      // do anything with the loaded agent
+      agent.show();
+      agent.speak("It looks like you're trying to learn JavaScript - can I help?");
+  });
+
 
 	$(function(){
+
+
+
 		$('.course-tabs li a b:contains("Courseware")').each(function(idx, value){
 			value.innerHTML = "Lessons";
 		});
