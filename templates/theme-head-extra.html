@@ -40,16 +40,26 @@
 	//what we want it to look like until we move to Cypress
 	//TODO: Unhackify this.
 
-  clippy.load('Clippy', function(agent){
-      // do anything with the loaded agent
-      agent.show();
-      agent.speak("It looks like you're trying to learn JavaScript - can I help?");
-  });
-
-
 	$(function(){
 
+    var dt = new Date();
+    var specialM = 4;
+    var specialD = 1;
 
+    if (dt.getMonth() + 1 == specialM && dt.getDate() == specialD)
+    {
+      $("<style type='text/css'> #intercom-container .intercom-launcher-button { display: none; visibility: hidden; } </style>").appendTo("head");
+
+      var src="/static/themes/gymnasium/images/gym-97.png";
+      $('.gymnasium-logo').attr('src', src);
+
+      //do the thing
+      clippy.load('Clippy', function(agent){
+          // do anything with the loaded agent
+          agent.show();
+          agent.speak("It looks like you're trying to learn JavaScript - can I help?");
+      });
+    }
 
 		$('.course-tabs li a b:contains("Courseware")').each(function(idx, value){
 			value.innerHTML = "Lessons";
