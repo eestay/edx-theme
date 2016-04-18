@@ -6,6 +6,32 @@
 <%block name="pagetitle">${_("Courses")}</%block>
 <%! from microsite_configuration import microsite %>
 
+<%
+import branding
+%>
+
+<section class="container-fluid">
+  <div class="container">
+    <header id="print-header">
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+          <img src="/static/themes/gymnasium/images/gymnasiumLogo.png" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+          <h1>
+            thegymnasium.com
+            <span>
+              Current Course Catalog
+            </span>
+          <h1>
+        </div>
+      </div>
+    </header>
+  </div>
+</section>
+
 <section class="find-courses" id="gym-catalog">
 
 
@@ -121,3 +147,127 @@
 
   })
 </script>
+
+
+<%block name="header_extras">
+  <style>
+    *{
+
+    }
+
+    header.global
+    {
+      display:none;
+    }
+
+    .wrapper-footer
+    {
+      diplay:none;
+    }
+
+    .course-title.container-fluid
+    {
+      display:none;
+    }
+
+    .course-menu
+    {
+      display:none;
+    }
+
+    .wrapper-footer
+    {
+      display:none;
+    }
+
+    article.row figure,
+    article.row p,
+    article.row .row,
+    .find-courses p,
+    aside.sidebar
+    {
+      display:none;
+    }
+
+    aside.sidebar
+    {
+      display:none;
+    }
+
+    .find-courses .my-courses .course-item header h1
+    {
+      font-size:1em;
+      margin:0.25em 0;
+    }
+
+    .find-courses .my-courses article.row header
+    {
+      padding-top:0.25em;
+      border-top: 0.125em solid #fff;
+    }
+
+    .find-courses .my-courses li.course-item
+    {
+      margin-left:3em;
+      margin-right:3em;
+    }
+    .my-courses .course-item
+    {
+      margin-top:0;
+    }
+
+    .find-courses .course-item article
+    {
+      padding-bottom:0;
+    }
+
+    .find-courses .course-overview
+    {
+      border:none;
+      background-color: #ebebeb;
+    }
+    .find-courses main
+    {
+        border:none;
+    }
+
+    #print-header
+    {
+      background-color:#222;
+      padding-bottom:1em;
+      padding-top:1.5em;
+    }
+
+    #print-header h1
+    {
+      font-size:140%;
+      font-weight:bold;
+      color:#f89820;
+      margin-top:0;
+      margin-bottom:0;
+      padding-top:0;
+      padding-bottom:0;
+    }
+
+    #print-header h1 span
+    {
+      color:#666;
+      font-weight:bold;
+    }
+
+    h1#full,
+    h1#gymshorts
+    {
+      margin-left:1.8em;
+      margin-right:2em;
+      color:#f89820;
+      font-weight:normal;
+      text-transform:capitalize;
+    }
+
+    h1#gymshorts
+    {
+      margin-top:0.25em;
+    }
+  </style>
+</%block>
