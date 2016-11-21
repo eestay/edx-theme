@@ -126,7 +126,7 @@ document.write('<iframe src="https://5255816.fls.doubleclick.net/activityi;src=5
               <ul class="course-list col-md-12">
                 %for idx, course in enumerate(courses):
                   % if course.is_newish:
-                      <li class="course-list-item col-lg-3 col-md-3 col-sm-6 col-xs-12 ">
+                      <li class="course-list-item col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
                         <%include file="course.html" args="course=course" />
                       </li>
 
