@@ -508,18 +508,23 @@ Gymnasium.prototype.LoadJobsForMarket = function(selected_market, limit, page, c
                 "/orderby/AquentJob.postedDate%20desc" +
                 "/limit/" + limit +
                 "/offset/" + page;
+
       $.ajax(
         {
           url: url,
           type: "POST",
           contentType: "application/json",
           dataType: "jsonp",
+          error: function(res, error){
+            console.log("Error loading jobs", error, "\nResponse:", res);
+          }
         });
     }
 
     var displayJobsForGeoLocation = function(position)
     {
       var market = getMarketFromGeoLocation(position);
+      $('#find-jobs-market-name, .job-location').text(market.name);
       queryJobsForMarket(market.id);
     }
 
