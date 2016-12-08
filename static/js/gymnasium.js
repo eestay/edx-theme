@@ -17,7 +17,7 @@ Gymnasium.prototype.setBackgroundColorOfElementFromImage = function (element, im
       var context = canvas.getContext('2d');
       context.drawImage(myImg, 0, 0);
 
-      data = context.getImageData(1, 1, 1, 1).data;
+      data = context.getImageData(0, 0, 1, 1).data;
 
       var r = data[0];
       var g = data[1];
